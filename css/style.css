@@ -340,6 +340,17 @@ span {
     font-size: 1rem;
 }
 
+/* Lista de la tarjeta vertical de servicios incluidos */
+.servicio-lista {
+    padding: 0.5rem 0.75rem;
+}
+
+.servicio-lista .icon-circle-outline {
+    width: auto;
+    height: auto;
+    border: 0;
+}
+
 .icon-circle-orange,
 .icon-circle-outline {
     width: 44px;
@@ -587,5 +598,321 @@ span {
   background: rgba(138, 138, 138, 0.11);
   border-radius: 8px;
   padding: 3rem;
+}
+
+/* ========== ESTILOS PERSONALIZADOS PARA NAVEGACIÓN DE GALERÍAS ========== */
+
+/* Contenedor principal de navegación */
+.fancybox-custom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 153, 8, 0.3);
+  margin-top: 10px;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Botones de navegación */
+.fancybox-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid #ff7b00;
+  background: linear-gradient(135deg, #ff7b00 0%, #ff9408 100%);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 123, 0, 0.3);
+}
+
+.fancybox-nav-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff9408 0%, #ffb333 100%);
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(255, 123, 0, 0.5);
+}
+
+.fancybox-nav-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.fancybox-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #999 0%, #bbb 100%);
+  border-color: #999;
+  box-shadow: none;
+}
+
+.fancybox-nav-btn i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contador de imágenes */
+.fancybox-counter {
+  background: rgba(255, 123, 0, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ff7b00;
+  min-width: 80px;
+  text-align: center;
+}
+
+.fancybox-counter .counter-text {
+  color: #ff7b00;
+  font-weight: 600;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Responsivo: En pantallas pequeñas, reducir tamaño de botones */
+@media (max-width: 768px) {
+  .fancybox-custom-nav {
+    gap: 12px;
+    padding: 12px 15px;
+  }
+  
+  .fancybox-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+  
+  .fancybox-counter .counter-text {
+    font-size: 12px;
+  }
+}
+
+/* Responsivo: En pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .fancybox-custom-nav {
+    gap: 8px;
+    padding: 10px 10px;
+  }
+  
+  .fancybox-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .fancybox-counter {
+    padding: 6px 12px;
+    min-width: 70px;
+  }
+  
+  .fancybox-counter .counter-text {
+    font-size: 11px;
+  }
+}
+
+/* Asegurar que los botones de Fancybox original no interfieran */
+.fancybox-button {
+  z-index: 999;
+}
+
+/* ========== FIN ESTILOS NAVEGACIÓN GALERÍAS ========== */
+
+/* ========== DISTRIBUCIÓN RESPONSIVE ========== */
+/* Estas reglas preservan el sistema visual y solo reorganizan el layout. */
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    padding-top: 0.75rem;
+  }
+
+  .navbar .nav-link {
+    padding: 0.5rem 0;
+  }
+
+  .cabin-main-img,
+  .feature-img {
+    height: 320px;
+  }
+
+  .mb-gap > .row.gx-5 {
+    --bs-gutter-x: 2rem;
+  }
+
+  #formulario-contacto .row {
+    --bs-gutter-x: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar .container,
+  main.container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .navbar .navbar-collapse {
+    padding: 0.75rem 0 0.25rem;
+  }
+
+  .whatsapp-flotante {
+    width: 52px;
+    height: 52px;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    font-size: 1.6rem;
+  }
+
+  .page-header .hero-section > img,
+  body > header:not(.hero-section) .hero-section > img {
+    height: 48vh !important;
+    min-height: 260px;
+  }
+
+  .page-header .gallery-title,
+  body > header:not(.hero-section) .gallery-title {
+    font-size: clamp(3.25rem, 16vw, 5rem) !important;
+    line-height: 0.85;
+    padding: 0 0.75rem;
+  }
+
+  main h2 {
+    font-size: clamp(1.75rem, 8vw, 2.2rem);
+    overflow-wrap: break-word;
+  }
+
+  header.hero-section > .hero-section > img.position-absolute {
+    width: 78% !important;
+  }
+
+  main.container.w-100 > section.text-center {
+    padding-top: 2.5rem !important;
+  }
+
+  main.container.w-100 > section.text-center > div {
+    padding: 0 1rem !important;
+  }
+
+  main.container.w-100 .row.align-items-center .p-5 {
+    padding: 1.75rem !important;
+  }
+
+  .mb-gap {
+    margin-bottom: 3rem;
+  }
+
+  .mb-gap > .row.gx-5 {
+    --bs-gutter-x: 1.5rem;
+  }
+
+  .cabin-main-img,
+  .feature-img {
+    height: 260px;
+  }
+
+  .gallery-scroll a img {
+    width: 120px;
+    height: 80px;
+  }
+
+  #formulario-contacto .row {
+    --bs-gutter-y: 2.5rem;
+  }
+
+  #formulario-contacto .ps-5 {
+    padding-left: 0 !important;
+  }
+
+  #formulario-contacto .text-muted.w-75 {
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .form-box {
+    padding: 1.75rem;
+  }
+}
+
+/* Grilla y galería de la página de servicios */
+.gallery-complejo > div {
+  display: flex;
+}
+
+.gallery-complejo .fancybox {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.gallery-complejo .fancybox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .servicios-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .servicios-grid > div {
+    grid-column: span 3 !important;
+    grid-row: auto !important;
+  }
+
+  .servicios-grid > div:nth-child(1),
+  .servicios-grid > div:nth-child(6) {
+    grid-column: span 6 !important;
+  }
+
+  .servicios-grid > div:nth-child(9) .card-servicio {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .servicios-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    gap: 0.75rem;
+  }
+
+  .servicios-grid > div {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+
+  .servicios-grid > div:nth-child(9) .card-servicio {
+    height: auto !important;
+    min-height: 250px !important;
+  }
+
+  .servicios-grid .card-servicio-img,
+  .servicios-grid .card-servicio-img-orange {
+    min-height: 220px;
+  }
+
+  .gallery-complejo .fancybox {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* En móvil, los bloques editoriales siempre priorizan el contenido antes de la imagen. */
+@media (max-width: 767.98px) {
+  main.container.w-100 .row.align-items-center > div:has(> a > .feature-img),
+  main.container > section.mb-gap > .row.align-items-stretch > div:has(.cabin-main-img),
+  main.container > section.mb-gap > .row.align-items-stretch:not(.gx-5) > div:has(> a > img) {
+    order: 2;
+  }
+
+  main.container.w-100 .row.align-items-center > div:not(:has(> a > .feature-img)),
+  main.container > section.mb-gap > .row.align-items-stretch > div:not(:has(.cabin-main-img)),
+  main.container > section.mb-gap > .row.align-items-stretch:not(.gx-5) > div:not(:has(> a > img)) {
+    order: 1;
+  }
 }
 
